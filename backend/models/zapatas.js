@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const zapatasSchema = new Schema({
+    _id: { type: Number },
     pesoSuelo: { type: Number, required: true},
     pesoConcreto: { type: Number, required: true},
     diametroAcero: { type: Number, required: true},

@@ -13,7 +13,7 @@ funciones.darPesoZapata = function (bx,by,e,pesoZapata) {
     for (let i = 0; i < bx.length; i++) {
         resultado = parseFloat(bx[i] * by[i] * e[i] * pesoZapata);
         //resultado = Math.round(resultado*100)/100;
-        //console.log(i,"El resultado de peso zapata: ", bx[i] ,"*", by[i] ,"*" ,e[i] , "*" ,pesoZapata ,"=", resultado);
+        console.log(i,"El resultado de peso zapata: ", bx[i] ,"*", by[i] ,"*" ,e[i] , "*" ,pesoZapata ,"=", resultado);
         lista.push(resultado);
     }
     return lista;
@@ -62,9 +62,11 @@ funciones.darMomentosActuantesMx = function (Mx,Fy,h,e) {
     var resultado =0;
     var lista = [];
     lista.length= 0;
-    for (let i = 0; i < Mx.length; i++) {
+    for (let i = 0; i < h.length; i++) {
         resultado = parseFloat(parseFloat(Mx[i]) - parseFloat(Fy[i]) * (h[i] - e[i]));
         //resultado = Math.round(resultado*100)/100;
+        // console.log("Tamaño M" + h.length);
+        // console.log("FUNCION MX:" + resultado);
         //console.log(i,"El resultado de momento actuante mx: ",parseFloat(Mx[i]) ,"-", parseFloat(Fy[i]),"*", "(",h[i] ,"-", e[i],")","=", resultado);
         lista.push(resultado);
     }
@@ -75,7 +77,7 @@ funciones.darMomentosActuantesMy = function (My,Fx,h,e) {
     var resultado =0;
     var lista = [];
     lista.length= 0;
-    for (let i = 0; i < My.length; i++) {
+    for (let i = 0; i < h.length; i++) {
         resultado = parseFloat(parseFloat(My[i]) + parseFloat(Fx[i]) * (h[i] - e[i]));
         //resultado = Math.round(resultado*100)/100;
         //console.log(i,"El resultado de momento actuante my: ",parseFloat(My[i]) ,"+", parseFloat(Fx[i]),"*", "(",h[i] ,"-", e[i],")","=", resultado);
@@ -212,7 +214,7 @@ funciones.darSepCabillasAsx = function (A,By,Ax) {
     lista.length= 0;
     for (let i = 0; i < By.length; i++) {
         resultado = parseFloat(A * (By[i] - 0.14) / Ax[i]);
-        //resultado = Math.round(resultado*100)/100;
+        resultado = Math.round(resultado*100)/100;
         //console.log(i,"El resultado de ASX: ", "parseFloat(",A[i] ,"*", By[i] ,"-", 0.14,")", "/", Ax[i],")", "=", resultado);
         lista.push(resultado);
     }

@@ -7,7 +7,9 @@ const basesSchema = new Schema({
     e:  [{ type: Number }],
     cx: [{ type: Number }],
     cy: [{ type: Number }],
-    h:  [{ type: Number }]
+    h:  [{ type: Number }],
+    numeroEtabs: Number,
+    numeroZapata: Number
 });
 
 module.exports = mongoose.model('Bases', basesSchema);
